@@ -1,0 +1,96 @@
+#root {
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+button {
+  color: green;
+}
+
+#root form {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 50px;
+}
+
+#root input {
+  font-size: min(100dvh, 90dvw / 9, 32cm / 9);
+  width: min(90vw, 32cm);
+  overflow: hidden;
+  padding: 0.3cm 0.6cm;
+  height: auto;
+  border: none;
+  box-sizing: border-box;
+  color: green;
+}
+
+#root input:focus,
+#root input:focus-visible {
+  outline: 2px solid green;
+}
+
+button#full-screen {
+  all: unset;
+  height: 100dvh;
+  width: 100dvw;
+  padding: 0;
+  margin: 0;
+  white-space: preserve nowrap;
+  border: none;
+  fill: none;
+  position: relative;
+}
+
+button#full-screen div.text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 1dvh;
+  color: green;
+  font-size: 100dvh;
+  line-height: 0.9;
+  height: 100dvh;
+  margin-left: 0;
+  font-family: monospace;
+  transition: none;
+  word-break: keep-all;
+}
+
+button#full-screen div.progress {
+  position: absolute;
+  bottom: 0;
+  height: 1dvh;
+  width: 0;
+  background-color: green;
+}
+
+button#full-screen.with-transition div.text {
+  transition: margin-left
+    calc((1s / 1000) * var(--milliseconds) * var(--length)) linear;
+}
+
+button#full-screen.negative-margin div.text {
+  margin-left: calc(-1px * var(--width));
+}
+
+button#full-screen.with-transition div.progress {
+  transition: width calc((1s / 1000) * var(--milliseconds) * var(--length))
+    linear;
+}
+
+button#full-screen.negative-margin div.progress {
+  width: 100%;
+}

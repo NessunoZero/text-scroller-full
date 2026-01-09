@@ -1,0 +1,10 @@
+import { defineConfig } from "vite";
+import { viteSingleFile } from "vite-plugin-singlefile";
+import solid from "vite-plugin-solid";
+
+export default defineConfig({
+  plugins: [solid(), viteSingleFile()],
+  preview: {
+    allowedHosts: ["text-scroller-full.loca.lt"],
+  },
+});
